@@ -1,3 +1,5 @@
+# Program for Simple Queue
+
 queue = [None] * 3 
 F = -1
 R = -1
