@@ -1,1 +1,3 @@
-print(self.start.info)
+  if temp == self.start:
+                 self.start = temp.next  
+             
