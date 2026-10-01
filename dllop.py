@@ -53,6 +53,35 @@ class Operation:
             newNode.next = q
             q.prev = newNode
     
+    def delete(self, data):
+        if self.start == None:
+            print("Empty")
+        else:
+            temp = self.start
+            while temp.info != data:
+                p=temp
+                temp = temp.next
+                if temp == None:
+                    print("Data not found")
+                    return
+            
+            if temp == self.start:
+                self.start = temp.next
+                self.start.prev = None
+                temp.prev = None
+                temp = None
+            elif temp.next == None:
+                p.next = None
+                temp.prev = None
+                temp = None
+            else:
+                q = temp.next
+                p.next = q
+                q.prev = p
+                temp.prev = None
+                temp.next = None
+                temp = None
+
     def display(self):
         if self.start == None:
             print("Empty List")
@@ -73,4 +102,6 @@ s1.insertAtEnd(99)
 s1.insertAtEnd(22)
 s1.display()
 s1.insertAtMid(33, 99)
+s1.display()
+s1.delete(888)
 s1.display()
